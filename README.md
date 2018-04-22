@@ -13,12 +13,13 @@ Running the project in development mode would require the mysql user to have pri
 * How to run the test suite
 Some sample data is written in test/fixtures which needs to be loaded to the `terminal_project_test` (This is taken care of by the below command) 
 
-	rake db:test:load
-	<!-- unit testing the models -->
-	rails test test/models/terminal_test.rb
-	<!-- unit testing the controllers -->
-	rails test test/controllers/terminals_controller_test.rb 
-	
+```
+rake db:test:load
+<!-- unit testing the models -->
+rails test test/models/terminal_test.rb
+<!-- unit testing the controllers -->
+rails test test/controllers/terminals_controller_test.rb 
+```	
 
 * Services (job queues, cache servers, search engines, etc.)
 
