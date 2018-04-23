@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8"/>
+</head>
+<body>
+<ul>
+	<li>
+		Question a:
+		<ul>
+			<li>
+				<table>
+					<tr>
+						<td>
+							<button>Click me</button>
+							<input type="text" name="">
+						</td>
+						<td>
+							<button>Click me</button>
+							<input type="text" name="">
+						</td>
+						<td>
+							<button>Click me</button>
+							<input type="text" name="">
+						</td>
+						<td>
+							<button>Click me</button>
+							<input type="text" name="">
+						</td>
+						<td>
+							<button>Click me</button>
+							<input type="text" name="">
+						</td>
+					</tr>	
+				</table>
+			</li>
+		</ul>
+	</li>
+	<li>
+	Question b:
+	<ul>
+		<li>Closure: Closures in javascript gives functions enclosed within other functions to have access to the variables set in the parent (outer) function. </li>
+		<li>I have used closures with asynchronous calls. The most recent situation I used it was for a page which had product listing. This product listing needs to be approved by the admin, for which each product has a button. I wrote an event listener for the button, which when clicked would trigger an asynchronous call to the server letting it know that the particular product clicked on needs to be approved.</li>
+		<li>You can find the snippet of code here: <a href="https://github.com/muralidharbg/se-team-7/blob/master/YouReview/WebContent/ApproveProducts.jsp">https://github.com/muralidharbg/se-team-7/blob/master/YouReview/WebContent/ApproveProducts.jsp</a></li>
+		<li>In the code you will find <pre>product_listing_dom</pre> variable set in the parent function which hold a DOM element. Based on the server response the DOM element is then manipulated using the variable name.</li>
+	</ul>
+	</li>
+	<li>Question c:
+	<ul>
+		<li>.push(), .pop(), .toString(), .map(), .join() are some functions that can be used on an array</li>
+		<li>.map() can be used to manipulate an array without having to write a loop for the array</li>
+		<li>
+		Ex:
+		<pre>
+			var greeting = ["Morinng", "Night", "Afternoon"]
+			greeting = greeting.map(ele => "Good " + ele )
+		</pre> 
+		</li>
+	</ul>
+	</li>
+	<li>Question d:
+		<button id="li_remove">Remove</button>
+		<ul>
+			<li>List1</li>
+			<li>List2</li>
+			<li>List3</li>
+			<li>List4</li>
+		</ul>
+
+	</li>
+	<li>
+	<button id="li_add">Add</button>
+	<ul>
+		
+	</ul>
+	</li>
+</ul>
+
+<script src="jquery-3.3.1.min.js"></script>
+<script>
+	$(document).ready(function () {
+		$("table button").click(function (){
+			$(this).siblings("input").val("Clicked")
+		});
+		var li_list = ""
+		$("#li_remove").click(function(){
+			li_list = $(this).next().children();
+			$(this).next().children().remove();
+		});
+
+		$("#li_add").click(function(){
+			$(this).next().append($(li_list));
+		});
+	});
+</script>
+</body>
+</html>
